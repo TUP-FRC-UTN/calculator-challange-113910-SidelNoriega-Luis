@@ -31,6 +31,16 @@ export class HijoComponent {
     const resultado = Number(this.valor1) / Number(this.valor2);
     this.EnviarNumeros.emit(resultado);
   } 
+  Potencia(): void { 
+    const resultado = Math.pow(Number(this.valor1), Number(this.valor2));
+    this.EnviarNumeros.emit(resultado);
+  }
+  Raiz(): void {
+    const valor1 = Number(this.valor1);
+    const valor2 = Number(this.valor2);
+    const resultado = Math.pow(valor2, 1 / valor1);
+    this.EnviarNumeros.emit(resultado);
+}
 
   CambiarValor1(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
